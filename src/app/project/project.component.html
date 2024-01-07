@@ -1,0 +1,27 @@
+<div class="portfolio-card" (click)="toggleDeleteButton()">
+
+  <div class="card-banner img-holder" style="--width: 800; --height: 540;">
+    <img [src]="projectForm.value ? projectForm.get('image').value : 'placeholder-image.jpg'"
+      width="800" height="540" loading="lazy" alt="Project Image" class="img-cover">
+
+    <!-- Floating delete button -->
+    <button *ngIf="showDeleteButton" class="btn-delete" (click)="deleteproject()">
+      <ion-icon name="trash-outline" aria-hidden="true"></ion-icon>
+    </button>
+  </div>
+
+  <div class="card-content">
+
+    <span class="chip label-md">{{project.title}}</span>
+
+    <h3 class="title-md">{{project.field}}</h3>
+
+    <p class="card-text">
+      {{project.description}}
+    </p>
+
+    <a href="#" class="btn btn-primary">View Project</a>
+
+  </div>
+
+</div>
